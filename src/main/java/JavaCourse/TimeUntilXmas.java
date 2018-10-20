@@ -5,7 +5,7 @@ import java.time.temporal.ChronoUnit;
 
 public class TimeUntilXmas {
 
-    public static void main(String[] args) {
+    public static void main(String... args) {
 
         LocalDateTime today = LocalDateTime.now();
         LocalDateTime xmas = LocalDateTime.of(LocalDateTime.now().getYear(), 12, 25, 0, 0);
