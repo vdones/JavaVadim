@@ -1,11 +1,15 @@
 package JavaCourse;
 
+import java.text.DecimalFormat;
+import java.time.LocalDateTime;
+
 public class CompareBuilderAndString {
 
     public static void main(String... args) {
 
         long start, end;
         int n = 10;
+        DecimalFormat secondFormat = new DecimalFormat("###.###");
 
         StringBuilder s1 = new StringBuilder();
         String s2 = "";
@@ -17,8 +21,9 @@ public class CompareBuilderAndString {
         }
         end = System.nanoTime();
 
-        System.out.print("String: " + s1 + "\nSpent time: ");
+        System.out.print("StringBuilder: " + s1 + "\nSpent time in nanoseconds: ");
         System.out.println(end-start);
+        System.out.println("Spent time in milliseconds: " + secondFormat.format((double)(end-start) / 1000000.0));
 
         //String  measure time
         start = System.nanoTime();
@@ -27,8 +32,9 @@ public class CompareBuilderAndString {
         }
         end = System.nanoTime();
 
-        System.out.print("StringBuilder: " + s2 + "\nSpent time: ");
+        System.out.print("String: " + s2 + "\nSpent time: ");
         System.out.println(end-start);
+        System.out.println("Spent time in milliseconds: " + secondFormat.format((double)(end-start) / 1000000.0));
 
     }
 }
