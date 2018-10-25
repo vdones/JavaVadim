@@ -4,7 +4,6 @@ public class Pi {
 
     //https://habr.com/post/188700/  ----------------------------------------------------------
 
-    //TODO: Another variant of implementing
     public static String piSpigot(int numbers) {
         // найденные цифры сразу же будем записывать в StringBuilder
         StringBuilder pi = new StringBuilder(numbers);
