@@ -8,10 +8,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        float x[];
-        x = randomFloatArray(5);
+        int x[];
+        x = randomIntArray(5);
         outArray(x);
-        outArray(reverseArray(x));
+        sumOddAndEvenNumbers(x);
+        countOddAndEvenNumbers(x);
 
 
     }
