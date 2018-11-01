@@ -26,6 +26,15 @@ public class MyArray {
         System.out.println();
     }
 
+    //Output bidimentional int array to console
+    public static void outArray(int[][] array){
+        for (int i[] : array) {
+            for (int j : i)
+                System.out.print(j + " ");
+            System.out.println();
+        }
+    }
+
     //Random float array (0.0-10.0) generation function
     public static float[] randomFloatArray(int arrayLength){
         Random random = new Random();
@@ -68,6 +77,53 @@ public class MyArray {
         }
         System.out.println("Count of odd numbers: " + countOdd);
         System.out.println("Count of even numbers: " + countEven);
+    }
+
+    //Bubble sort of int array
+    public static int[] bubbleSort(int[] array){
+        for (int i = 0; i < array.length ; i++){
+            boolean flag = true;
+            for (int j = 0; j < array.length - 1 - i; j++)
+                if (array[j] > array[j + 1]) {
+                    int t = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = t;
+                    flag = false;
+                }
+            if (flag) break;
+        }
+        return array;
+    }
+
+    public static boolean isMagicSquare(int[][] array){
+
+        int sumDiagonal1 = 0;
+        int sumDiagonal2 = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            sumDiagonal1 += array[i][array.length - i - 1];
+            sumDiagonal2 += array[i][i];
+        }
+
+        if (sumDiagonal1 != sumDiagonal2) return false;
+
+        for (int i = 0; i < array.length; i++) {
+            int sumVertical = 0;
+            int sumHorizontal = 0;
+
+            for (int j = 0; j < array.length; j++) {
+                sumHorizontal += array[i][j];
+                sumVertical += array[j][i];
+            }
+
+            if (sumHorizontal != sumVertical)
+                return false;
+            else
+                if (sumHorizontal != sumDiagonal1)
+                    return false;
+        }
+        return true;
+
     }
 
 }
